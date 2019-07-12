@@ -24,6 +24,7 @@ const gulp                      = require('gulp'),
       minifyCss                 = require('gulp-clean-css'),
       uglify                    = require('gulp-uglify'),
       concat                    = require('gulp-concat'),
+      ssi                       = require("gulp-ssi"),
       imagemin                  = require('gulp-imagemin'),
       browserSync               = require('browser-sync').create(),
 
@@ -38,8 +39,13 @@ const gulp                      = require('gulp'),
 
 gulp.task('clear', () => del([ dist_folder ]));
 
-gulp.task('html', () => {
-  return gulp.src([ src_folder + '**/*.html' ])
+gulp.task('html', () => {  
+
+  return gulp.src([ src_folder + '**/*.html' ] )
+
+   .pipe(ssi({
+        root: './src/'
+    }))
     .pipe(gulp.dest(dist_folder))
     .pipe(browserSync.stream());
 }); 
@@ -56,8 +62,6 @@ gulp.task('css', () => {
     .pipe(gulp.dest(dist_assets_folder + 'css'))
     .pipe(browserSync.stream());
 });
-
- 
 
 gulp.task('js', () => {
   return gulp.src([ src_assets_folder + 'js/**/*.js' ] ) 

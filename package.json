@@ -28,6 +28,7 @@
     "gulp-pug": "^4.0.1",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
+    "gulp-ssi": "^0.1.3",
     "gulp-stylus": "^2.7.0",
     "gulp-uglify": "^3.0.2"
   }
