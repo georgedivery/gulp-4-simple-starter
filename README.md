@@ -2,7 +2,7 @@
 A simple Gulp 4 Starter Kit oriented to css modules.
 
 ## Required
-Node.js (once)
+Node.js
 
 ## Install
 npm install --global gulp-cli (once)
