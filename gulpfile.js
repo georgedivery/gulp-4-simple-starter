@@ -63,6 +63,12 @@ gulp.task('css', () => {
     .pipe(browserSync.stream());
 });
 
+gulp.task('vendor', () => {
+  return gulp.src([src_assets_folder + 'vendor/**/*.*', ] )
+    .pipe(gulp.dest(dist_assets_folder + 'vendor'))
+    .pipe(browserSync.stream());
+});
+
 gulp.task('js', () => {
   return gulp.src([ src_assets_folder + 'js/**/*.js' ] ) 
     .pipe(gulp.dest(dist_assets_folder + 'js'))
@@ -77,9 +83,9 @@ gulp.task('images', () => {
     .pipe(browserSync.stream());
 }); 
 
-gulp.task('build', gulp.series('clear', 'html', 'css', 'js', 'images'));
+gulp.task('build', gulp.series('clear', 'html', 'vendor', 'css', 'js', 'images'));
 
-gulp.task('dev', gulp.series('html', 'css', 'js'));
+gulp.task('dev', gulp.series('html', 'vendor', 'css', 'js'));
 
 gulp.task('serve', () => {
   return browserSync.init({
