@@ -12,10 +12,22 @@ npm install --global gulp-cli
 
 ## Instructions
 * Clone repo
+```
+git clone https://github.com/georgedivery/gulp-4-simple-starter.git
+```
 * Go inside cloned repo
-	```
-	cd gulp-4-simple-starter
-	```
-* npm install
-* "gulp" - to run dev mode
-* "gulp build" - to  recreate dist folder where is production files 
+```
+cd gulp-4-simple-starter
+```
+* Install node modules
+```
+npm install
+```
+* Run dev mode
+```
+gulp
+```
+* To recreate dist folder where is production files 
+```
+gulp build
+```
